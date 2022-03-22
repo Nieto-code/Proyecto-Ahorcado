@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <script th:src="@{/js/funciones.js}"></script>
+    <meta charset="UTF-8">
+    <title th:utext="#{login.titulo}"></title>
+    <link rel="icon" href="data:,"/>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+<h1 th:text="#{login.titulo}"></h1>
+<div th:replace="fragments/cabecera :: datos"></div>
+
+<fieldset>
+
+    <legend class="negrita" th:text="#{login.legend}"/>
+    
+    <form id="login" th:object="${userDTO}" th:action="@{/acceso/login}" method="post">
+        <label>
+            <span class="rojo negrita">*</span>
+            <span class="negrita" th:text="#{login.usuario.etiqueta}"/>
+            
+            <input type="text" name="usuario" id="usuario" th:field="*{usuario}"/>
+            <span class="rojo negrita" th:each="error: ${#fields.errors('usuario')}" th:utext="|${error} &nbsp;|"/>
+        </label>
+        <br/>
+        <label>
+            <span class="rojo negrita">*</span>
+            <span class="negrita" th:text="#{login.clave.etiqueta}"/>
+            
+            <input type="password" name="clave" id="clave" th:field="*{clave}"/>
+            <span class="rojo negrita" th:each="error: ${#fields.errors('clave')}" th:utext="|${error} &nbsp;|"/>
+        </label>
+        
+        <br/>
+        <span class="rojo negrita" th:text="${otroError}"/>
+        
+        <br/>
+        <input type="submit" th:value="#{login.submit.texto}"/>
+ 
+    </form>
+</fieldset>
+</body>
+</html>

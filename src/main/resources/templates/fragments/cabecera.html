@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="panel" th:fragment="datos">
+
+    <fieldset >
+        <legend class="negrita" th:text="#{cabecera.titulo.panelCliente}"/>
+        <span class="negrita" th:text="#{cabecera.ip}"/>
+        <span th:text="${direccionIP}"/>
+        <br/>
+      
+        <span class="negrita" th:text="#{cabecera.info_navegador}"/>
+        <span th:text="${info_navegador}"/>
+    </fieldset>
+       
+</div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+cabeza
+cono
+nombre
+piedra
+rubia
+almendra
+baja
+ignorar
+ver
+triste
+contento
+largo

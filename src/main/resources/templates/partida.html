@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{partida.titulo}"/>
+    <link rel="icon" href="data:,"/>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+<h1 th:text="${resultado}"></h1>
+
+<fieldset class="cajon">
+    <legend class="negrita" th:text="#{partida.leyenda}"/>
+    <form id="partida" th:action="@{/juego/partida}" method="post">
+
+        <span class="negrita" th:text="#{partida.adivina}"/>
+        
+        <div class="borde" th:each="letra: ${palabraJuego}">
+            <div class="cajaLetra">
+                <span class="letra"th:text="${letra}"/>
+            </div>
+        </div>
+        <br/>
+        <img th:id="${listaIteraImagen.get(numIntentos)}" th:src="@{/img/fondo.png}">
+        <br/>
+        <br/>
+        <span class="negrita" th:text="#{partida.ingrese}"/>
+        <input class="caja" type="text" id="letra" name="letra"/>
+        <input type="submit" th:value="#{partida.prueba}"/>
+        <br/>
+        <br/>
+        <span class="negrita" th:text="#{partida.palabraOculta}"/>
+        <span th:text="${palabraOculta}"/>
+        <br/>
+        <span class="negrita" th:text="#{partida.intentos}"/>
+        <span th:text="${numIntentos}"/>
+        <br/>
+        <span class="negrita" th:text="#{partida.fallos}"/>
+        <span th:text="${numFallos}"/>
+        <br/>
+    </form>
+    <br/>
+    <form id="borraPartida" th:action="@{/juego/borraPartida}" method="post">
+        <input type="submit" th:value="#{partida.borraPartida}"/>
+    </form>
+</fieldset>
+</body>
+</html>
