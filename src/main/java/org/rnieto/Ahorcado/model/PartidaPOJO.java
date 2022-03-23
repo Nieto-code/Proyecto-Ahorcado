@@ -31,13 +31,13 @@ public class PartidaPOJO {
 			palabraSeleccionada[i] = '-';
 		}
 		
-		listaIteraImagen.put(1, "uno");
-		listaIteraImagen.put(2, "dos");
-		listaIteraImagen.put(3, "tres");
-		listaIteraImagen.put(4, "cuatro");
-		listaIteraImagen.put(5, "cinco");
-		listaIteraImagen.put(6, "seis");
-		listaIteraImagen.put(7, "siete");
+		listaIteraImagen.put(0, "siete");
+		listaIteraImagen.put(1, "seis");
+		listaIteraImagen.put(2, "cinco");
+		listaIteraImagen.put(3, "cuatro");
+		listaIteraImagen.put(4, "tres");
+		listaIteraImagen.put(5, "dos");
+		listaIteraImagen.put(6, "uno");
 	}
 
 	public String eligePalabra() throws IOException {
